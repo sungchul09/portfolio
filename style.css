@@ -99,14 +99,20 @@ button {
 #navbar {
     display: flex;
     justify-content: space-between;
-    background: var(--color-black);
+    /* background: var(--color-black); */
+    background: transparent;
     align-items: center;
     color: var(--color-white);
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 50px;
+    transition: all var(--animation-duration) ease-in-out;
+}
+
+#navbar.navbar--dark {
+    background: var(--color-grey);
 }
 
 .navbar__menu {
@@ -149,6 +155,14 @@ button {
 
 .navbar__logo:hover {
     transform: translateY(-4px);
+}
+
+.navbar__toggle-btn {
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
+    color: var(--color-white);
+    display: none;
 }
 
 /* Home */
@@ -334,6 +348,7 @@ p {
     justify-content: center;
     background-color: var(--color-light-grey);
     color: var(--color-light-white);
+    margin-top: 50px;
 }
 
 .skillset__title {
@@ -389,13 +404,15 @@ p {
 
 .work__categories {
     margin: 40px;
+    display: flex;
 }
 
 .category__btn {
     border: 2px solid var(--color-dark-white);
     border-radius: var(--size-border-radius);
     font-size: var(--font-regular);
-    padding: 8px 48px;
+    height: 50px;
+    width: 100%;
 }
 
 .category__btn.active,
@@ -537,7 +554,53 @@ p {
     color: var(--color-white);
 }
 
-
 .emoji {
     font-size: var(--font-medium);
+}
+
+/* 768 screen width  */
+@media screen and (max-width: 768px) {
+    .navbar__toggle-btn {
+        display: block;
+    }
+
+    #navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .navbar__menu {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        display: none;
+    }
+
+    .about__majors {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .major {
+        margin-bottom: 38px;
+    }
+
+    .job__logo {
+        width: 100px;
+        margin-bottom: 38px;
+    }
+
+    .skillset {
+        flex-direction: column;
+    }
+
+    .work__categories {
+        flex-direction: column;
+    }
+
+    .testimonials {
+        flex-direction: column;
+    }
 }
