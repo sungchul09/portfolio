@@ -4,11 +4,34 @@
 const navbar = document.querySelector('#navbar');
 const navbarHeight = navbar.getBoundingClientRect().height;
 document.addEventListener('scroll', () => {
-    console.log(window.scrollY);
-    console.log(`navbarHeight:${navbarHeight}`);
     if (window.scrollY > navbarHeight) {
         navbar.classList.add('navbar--dark');
     } else {
         navbar.classList.remove('navbar--dark');
     }
 })
+
+const navbarMenu = document.querySelector('.navbar__menu');
+
+navbarMenu.addEventListener('click', (event) => {
+    let target = event.target.dataset;
+    let link = event.target.dataset.link;
+    if (link == null)
+        return;
+    scrollIntoView(link);
+})
+
+const contactmeBtn = document.querySelector('.home__contact');
+
+contactmeBtn.addEventListener('click', (event) => {
+    let target = event.target;
+    let link = event.target.dataset.link;
+    scrollIntoView(link);
+})
+
+function scrollIntoView(selector) {
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({
+        behavior: 'smooth'
+    });
+}
