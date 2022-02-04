@@ -128,11 +128,6 @@ button {
     transition: all var(--animation-duration) ease;
 }
 
-.navbar__menu__item.active {
-    border: 1px solid var(--color-sc-green);
-    border-radius: var(--size-border-radius);
-}
-
 .navbar__menu__item:hover {
     background-color: var(--color-sc-green);
     border-radius: var(--size-border-radius);
@@ -415,13 +410,13 @@ p {
     width: 100%;
 }
 
-.category__btn.active,
+.category__btn.selected,
 .category__btn:hover {
     background-color: var(--color-sc-black);
     color: var(--color-white);
 }
 
-.category__btn.active .category__count,
+.category__btn.selected .category__count,
 .category__btn:hover .category__count {
     opacity: 1;
     top: 0;
