@@ -46,3 +46,44 @@ function scrollIntoView(selector) {
         behavior: 'smooth'
     });
 }
+
+
+// 스크롤 내릴때 화살표 박스
+const arrowUp = document.querySelector('.arrow-up');
+document.addEventListener('scroll', () => {
+    if (window.scrollY > homeHeight / 2) {
+        arrowUp.classList.add('visible');
+    } else {
+        arrowUp.classList.remove('visible');
+    }
+})
+
+// 화살표 박스 클릭 시 위로
+arrowUp.addEventListener('click', () => {
+    scrollIntoView("#home");
+})
+
+// work 버튼 
+const workBtnContainer = document.querySelector(".work__categories");
+const projectContainer = document.querySelector(".work__projects");
+const projects = document.querySelectorAll('.project');
+
+workBtnContainer.addEventListener('click', (e) => {
+    let filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+    if (filter == null) {
+        return;
+    }
+
+    projectContainer.classList.add('anim-out');
+    setTimeout(() => {
+
+        projects.forEach((project) => {
+            if (filter === '*' || filter === project.dataset.type) {
+                project.classList.remove('invisible');
+            } else {
+                project.classList.add('invisible');
+            }
+        })
+        projectContainer.classList.remove('anim-out');
+    }, 300)
+})

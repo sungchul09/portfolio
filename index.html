@@ -93,7 +93,7 @@
                 </div>
                 <div class="job">
                     <img src="imgs/about/job.png" alt="" class="job__logo">
-                    <!-- <img src="imgs/about/job-small.png" alt="" class="job__logo"> -->
+                    <!-- <img src="imgs/about/job-small.png" alt="  " class="job__logo"> -->
                     <div class="job__description">
                         <a class="job__name" href="https://www.hyundaimovex.com/" target="blank">현대무벡스 물류자동화솔루션 개발</a>
                         <a class="job__period">2019.08 - 2022.</a>
@@ -188,13 +188,17 @@
             <h1>My Work</h1>
             <h3>Projects</h3>
             <div class="work__categories">
-                <button class="category__btn active"><span>All</span><span class="category__count">8</span></button>
-                <button class="category__btn"><span>HTML/CSS/JS</span><span class="category__count">2</span></button>
-                <button class="category__btn"><span>REACT</span><span class="category__count">3</span></button>
-                <button class="category__btn"><span>TYPESCRIPT</span><span class="category__count">3</span></button>
+                <button class="category__btn active" data-filter="*"><span>All</span><span
+                        class="category__count">8</span></button>
+                <button class="category__btn" data-filter="web"><span>HTML/CSS/JS</span><span
+                        class="category__count">2</span></button>
+                <button class="category__btn" data-filter="react"><span>REACT</span><span
+                        class="category__count">3</span></button>
+                <button class="category__btn" data-filter="typescript"><span>TYPESCRIPT</span><span
+                        class="category__count">3</span></button>
             </div>
             <div class="work__projects">
-                <a href="#" class="project" target="blank">
+                <a href="#" class="project" target="blank" data-type="web">
                     <img class="project__img" src="imgs/projects/cheongna.PNG" alt="#">
                     <div class="project__description">
                         <h3>현대무벡스 R&D 센터 자동화창고 UI</h3>
@@ -250,6 +254,10 @@
             <p class="contact__rights">2020 SC.YUN - All rights reserved</p>
         </div>
     </section>
+    <!-- Arrow up -->
+    <button class="arrow-up">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 </body>
 
 </html>
