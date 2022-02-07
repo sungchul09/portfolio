@@ -11,14 +11,20 @@ document.addEventListener('scroll', () => {
     }
 })
 
-const navbarMenu = document.querySelector('.navbar__menu');
 
+const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click', (event) => {
     let target = event.target.dataset;
     let link = event.target.dataset.link;
     if (link == null)
         return;
+    navbarMenu.classList.remove('open');
     scrollIntoView(link);
+})
+
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click', () => {
+    navbarMenu.classList.toggle('open');
 })
 
 const home = document.querySelector('.home__container');
